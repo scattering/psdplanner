@@ -1,0 +1,24 @@
+[project]
+license = {file = "LICENSE"}
+name = "tas-psd-planner"
+version = "0.1.0"
+description = "Python planning boundary for TAS PSD experiment planner algorithms."
+requires-python = ">=3.9"
+dependencies = ["tas-copilot-contracts"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.entry-points."tas_copilot.tools"]
+tas_psd_planner = "tas_psd_planner.copilot_plugin"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
